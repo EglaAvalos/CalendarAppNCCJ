@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AppCalendar</string>
+    <string name="nombre_iglesia">Iglesia
+        Nuevos Comienzos Con Jesucristo</string>
+    <string name="btn_inicio_sesion">Inicio de Sesión</string>
+    <string name="login_titulo">Iniciar Sesión</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contrasena">Contraseña</string>
+    <string name="btn_entrar">Entrar</string>
+
 </resources>
