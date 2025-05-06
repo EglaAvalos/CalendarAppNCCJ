@@ -7,5 +7,11 @@
     <string name="hint_usuario">Usuario</string>
     <string name="hint_contrasena">Contraseña</string>
     <string name="btn_entrar">Entrar</string>
+    <string name="siglas_iglesia">NCCJ</string>
+    <string name="calendar_text">Mes y Año</string>
+    <string name="user_name">Icely</string>
+    <string name="lideres_ncck">Líderes</string>
+    <string name="mision_valores">Misión y Valores</string>
+    <string name="help_center">Centro de Ayuda</string>
 
 </resources>

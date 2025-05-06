@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="12dp">
+
+    <ImageView
+        android:id="@+id/ivLeaderPhoto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_icon" />
+
+    <!-- Información del líder (Nombre, puesto y teléfono) -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1">
+
+        <!-- Nombre del líder -->
+        <TextView
+            android:id="@+id/tvLeaderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del líder"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#3FF445"/>
+
+        <!-- Puesto del líder -->
+        <TextView
+            android:id="@+id/tvLeaderPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puesto"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
+
+        <!-- Teléfono del líder -->
+        <TextView
+            android:id="@+id/tvLeaderPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono"
+            android:textSize="14sp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+</LinearLayout>

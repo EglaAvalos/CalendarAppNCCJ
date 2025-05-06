@@ -2,6 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/ver2"
+    android:padding="16dp">
 
+    <TextView
+        android:id="@+id/tvMission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuestra misión es..."
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuestros valores son..."
+        android:textSize="16sp" />
 </LinearLayout>
