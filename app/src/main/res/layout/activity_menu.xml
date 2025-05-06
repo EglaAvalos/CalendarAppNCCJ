@@ -48,7 +48,7 @@
             android:background="#3FF445"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="15dp"
-            android:drawableStart="@drawable/ic_leader"
+            android:drawableStart="@drawable/ic_leader"/>
         <Button
             android:id="@+id/btn_mission"
             android:layout_width="match_parent"
