@@ -2,6 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/ver2">
+
+    <!-- Título que puede ser opcional -->
+    <TextView
+        android:id="@+id/tvHelpCenterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descargar Manual de Usuario"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"/>
+
+    <!-- Botón para descargar el PDF -->
+    <Button
+        android:id="@+id/btnDownloadManual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descargar PDF"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

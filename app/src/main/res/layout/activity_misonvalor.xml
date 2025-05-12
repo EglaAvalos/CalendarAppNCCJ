@@ -10,7 +10,7 @@
         android:id="@+id/tvMission"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuestra misión es..."
+        android:text="@string/mision"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"/>
@@ -19,6 +19,6 @@
         android:id="@+id/tvValues"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuestros valores son..."
+        android:text="@string/valores"
         android:textSize="16sp" />
 </LinearLayout>

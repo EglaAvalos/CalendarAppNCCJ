@@ -17,21 +17,26 @@ class LoginActivity : AppCompatActivity() {
         val etContrasena = findViewById<EditText>(R.id.etContrasena)
         val btnIniciarSesion = findViewById<Button>(R.id.btnIniciarSesion)
 
+        val repository = UserRepository(this)
+
         btnIniciarSesion.setOnClickListener {
             val usuario = etUsuario.text.toString()
             val contrasena = etContrasena.text.toString()
 
-            // Validación básica de usuario y contraseña
-            if (usuario == "admin" && contrasena == "admin") {
-                // Si el usuario es "admin" y la contraseña es "admin", navega al calendario
-                val intent = Intent(this, CalendarActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else if (usuario.isNotEmpty() && contrasena.isNotEmpty()) {
-                // Si los campos no están vacíos pero el usuario es incorrecto
-                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            if (usuario.isNotEmpty() && contrasena.isNotEmpty()) {
+                val isAdmin = repository.login(usuario, contrasena)
+                if (isAdmin != null) {
+                    val intent = if (isAdmin == 1) {
+                        Intent(this, AdminMainActivity::class.java)
+                    } else {
+                        Intent(this, CalendarActivity::class.java)
+                    }
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                // Si alguno de los campos está vacío
                 Toast.makeText(this, "Por favor ingrese usuario y contraseña", Toast.LENGTH_SHORT).show()
             }
         }

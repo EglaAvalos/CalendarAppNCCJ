@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">AppCalendar</string>
-    <string name="nombre_iglesia">Iglesia
-        Nuevos Comienzos Con Jesucristo</string>
+    <string name="nombre_iglesia">Iglesia Nuevos Comienzos Con Jesucristo</string>
     <string name="btn_inicio_sesion">Inicio de Sesión</string>
     <string name="login_titulo">Iniciar Sesión</string>
     <string name="hint_usuario">Usuario</string>
@@ -13,5 +12,15 @@
     <string name="lideres_ncck">Líderes</string>
     <string name="mision_valores">Misión y Valores</string>
     <string name="help_center">Centro de Ayuda</string>
-
+    <string name="log_out">Cerrar Sesión</string>
+    <string name="lider_name">Nombre del líder</string>
+    <string name="puesto">Puesto</string>
+    <string name="telefono">Teléfono</string>
+    <string name="btn_savelider">Guardar líder</string>
+    <string name="mision">Nuestra misión es...</string>
+    <string name="valores">Nuestros valores son...</string>
+    <array name="admin_options">
+        <item>Administrador</item>
+        <item>Usuario</item>
+    </array>
 </resources>

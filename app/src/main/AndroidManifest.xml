@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permisos necesarios -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -27,11 +32,45 @@
             android:name=".PresentationActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCalendar"/>
+
+        <!-- Actividad de login -->
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
+
+        <!-- Actividad de calendario -->
         <activity android:name=".CalendarActivity"
             android:exported="false"/>
+
+        <!-- Actividad de menú (debe permitir navegar a los líderes, misión, ayuda) -->
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false"/>
+
+        <!-- Actividad de líderes -->
+        <activity
+            android:name=".LeaderListActivity"
+            android:exported="false"/>
+
+        <!-- Actividad de formulario de líderes -->
+        <activity
+            android:name=".LeaderFormActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".MisionValorActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".HelpCenterActivity"
+            android:exported="false"/>
+        <activity android:name=".AdminMainActivity"
+            android:exported="false"/>
+        <activity android:name=".AgregarUsuariosActivity"
+            android:exported="false" />
+        <activity android:name=".EditEventosActivity"
+            android:exported="false" />
+        <activity android:name=".EditMisionValoresActivity"
+            android:exported="false" />
+
 
 
     </application>
