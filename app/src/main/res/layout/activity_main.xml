@@ -56,14 +56,6 @@
         android:columnCount="7"
         android:paddingHorizontal="8dp"
         android:layout_marginTop="8dp">
-
-        <TextView android:text="Lun" style="@style/DayLabel"/>
-        <TextView android:text="Mar" style="@style/DayLabel"/>
-        <TextView android:text="Mié" style="@style/DayLabel"/>
-        <TextView android:text="Jue" style="@style/DayLabel"/>
-        <TextView android:text="Vie" style="@style/DayLabel"/>
-        <TextView android:text="Sáb" style="@style/DayLabel"/>
-        <TextView android:text="Dom" style="@style/DayLabel"/>
     </GridLayout>
 
     <!-- Calendario con scroll -->

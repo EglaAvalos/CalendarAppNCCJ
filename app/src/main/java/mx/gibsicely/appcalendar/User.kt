@@ -1,3 +1,6 @@
-package mx.gibsicely.appcalendar
-
-data class User(val nombre: String, val esAdmin: Int)
+data class User(
+    val id: Int,
+    val usuario: String,
+    val nombre: String,
+    val tipo: Int
+)

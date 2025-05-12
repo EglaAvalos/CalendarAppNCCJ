@@ -3,6 +3,7 @@ package mx.gibsicely.appcalendar
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.util.TypedValue
 import android.widget.GridLayout
 import android.widget.ImageButton
@@ -13,28 +14,37 @@ import java.util.Calendar
 
 class CalendarActivity : AppCompatActivity() {
 
+    private lateinit var daysOfWeekGrid: GridLayout
     private lateinit var calendarGrid: GridLayout
     private lateinit var monthYearText: TextView
     private lateinit var menuButton: ImageButton
 
     private val calendar: Calendar = Calendar.getInstance()
 
+    private lateinit var eventoRepo: EventoRepository
+    private lateinit var eventos: List<Evento>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inicialización de vistas
+        eventoRepo = EventoRepository(applicationContext)
+        eventos = eventoRepo.obtenerEventos() ?: emptyList()
+
+        daysOfWeekGrid = findViewById(R.id.days_of_week)
         calendarGrid = findViewById(R.id.calendar_grid)
         monthYearText = findViewById(R.id.month_year)
         menuButton = findViewById(R.id.btn_menu)
 
+        // Dibujar encabezado (una sola vez)
+        drawDaysOfWeek()
+
         // Mostrar mes y año actual
         updateMonthYear()
 
-        // Dibujar los días del mes
+        // Dibujar días del mes
         drawCalendar()
 
-        // Botón de menú para ir a MenuActivity
         menuButton.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java))
         }
@@ -46,12 +56,39 @@ class CalendarActivity : AppCompatActivity() {
         monthYearText.text = "${getMonthName(currentMonth)} $currentYear"
     }
 
+    private fun drawDaysOfWeek() {
+        daysOfWeekGrid.removeAllViews()
+        val screenWidth = resources.displayMetrics.widthPixels
+        val cellSize = screenWidth / 7
+        val daysOfWeek = listOf("Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom")
+
+        for ((i, day) in daysOfWeek.withIndex()) {
+            val textView = TextView(this).apply {
+                text = day
+                setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
+                setTextColor(Color.BLACK)
+                setBackgroundColor(Color.LTGRAY)
+                gravity = android.view.Gravity.CENTER
+            }
+            val params = GridLayout.LayoutParams().apply {
+                width = cellSize
+                height = cellSize
+                rowSpec = GridLayout.spec(0)
+                columnSpec = GridLayout.spec(i)
+                setMargins(2, 2, 2, 2)
+            }
+            daysOfWeekGrid.addView(textView, params)
+        }
+    }
+
     private fun drawCalendar() {
         calendar.set(Calendar.DAY_OF_MONTH, 1)
-        val firstDayOfMonth = calendar.get(Calendar.DAY_OF_WEEK) - 1
+        val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
+        val firstDayOfMonth = if (dayOfWeek == Calendar.SUNDAY) 6 else dayOfWeek - 2
         val numberOfDaysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
 
         calendarGrid.removeAllViews()
+        calendarGrid.columnCount = 7
 
         val screenWidth = resources.displayMetrics.widthPixels
         val cellSize = screenWidth / 7
@@ -59,16 +96,23 @@ class CalendarActivity : AppCompatActivity() {
         for (i in 0 until 42) {
             val dayButton = Button(this).apply {
                 setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
-                setBackgroundColor(Color.parseColor("#FFFFFF")) // Fondo blanco
+                setBackgroundColor(Color.WHITE)
                 setTextColor(Color.BLACK)
             }
 
+            val row = (i + firstDayOfMonth) / 7
+            val col = (i + firstDayOfMonth) % 7
+
             if (i >= firstDayOfMonth && i < firstDayOfMonth + numberOfDaysInMonth) {
                 val dayOfMonth = i - firstDayOfMonth + 1
-                dayButton.text = dayOfMonth.toString()
-                dayButton.setOnClickListener {
-                    // Aquí puedes manejar el clic de cada día (abrir evento, mostrar detalle, etc.)
+                val dayString = String.format("%04d-%02d-%02d", calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, dayOfMonth)
+
+                val eventosDelDia = eventos.filter { it.fecha == dayString }
+                if (eventosDelDia.isNotEmpty()) {
+                    dayButton.setBackgroundColor(Color.parseColor("#90EE90"))
                 }
+
+                dayButton.text = dayOfMonth.toString()
             } else {
                 dayButton.text = ""
                 dayButton.isEnabled = false
@@ -78,11 +122,10 @@ class CalendarActivity : AppCompatActivity() {
             val params = GridLayout.LayoutParams().apply {
                 width = cellSize
                 height = cellSize
-                rowSpec = GridLayout.spec(i / 7)
-                columnSpec = GridLayout.spec(i % 7)
-                setMargins(4, 4, 4, 4)
+                rowSpec = GridLayout.spec(row)
+                columnSpec = GridLayout.spec(col)
+                setMargins(2, 2, 2, 2)
             }
-
             calendarGrid.addView(dayButton, params)
         }
     }

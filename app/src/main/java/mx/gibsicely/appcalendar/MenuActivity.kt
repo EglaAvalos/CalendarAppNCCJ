@@ -3,6 +3,7 @@ package mx.gibsicely.appcalendar
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -11,7 +12,7 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        // Acceder a los elementos de la interfaz
+
         val btnLeaders = findViewById<Button>(R.id.btn_leaders)
         val btnMission = findViewById<Button>(R.id.btn_mission)
         val btnHelp = findViewById<Button>(R.id.btn_help)
@@ -19,7 +20,6 @@ class MenuActivity : AppCompatActivity() {
 
         // Evento para el botón de Líderes
         btnLeaders.setOnClickListener {
-            // Navegar a la actividad de Líderes (ajustar si la actividad se llama diferente)
             startActivity(Intent(this, LeaderListActivity::class.java))
         }
 
@@ -31,13 +31,11 @@ class MenuActivity : AppCompatActivity() {
 
         // Evento para el botón de Centro de Ayuda
         btnHelp.setOnClickListener {
-            // Navegar a la actividad de Centro de Ayuda
             startActivity(Intent(this, HelpCenterActivity::class.java))
         }
 
         // Evento para el botón de Cerrar Sesión
         btnCerrarSesion.setOnClickListener {
-            // Volver a la actividad de login, limpiando el stack
             val intent = Intent(this, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)

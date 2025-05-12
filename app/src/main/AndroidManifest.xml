@@ -40,9 +40,9 @@
 
         <!-- Actividad de calendario -->
         <activity android:name=".CalendarActivity"
-            android:exported="false"/>
+            android:exported="true"/>
 
-        <!-- Actividad de menú (debe permitir navegar a los líderes, misión, ayuda) -->
+
         <activity
             android:name=".MenuActivity"
             android:exported="false"/>
@@ -50,11 +50,6 @@
         <!-- Actividad de líderes -->
         <activity
             android:name=".LeaderListActivity"
-            android:exported="false"/>
-
-        <!-- Actividad de formulario de líderes -->
-        <activity
-            android:name=".LeaderFormActivity"
             android:exported="false"/>
         <activity
             android:name=".MisionValorActivity"
@@ -67,8 +62,6 @@
         <activity android:name=".AgregarUsuariosActivity"
             android:exported="false" />
         <activity android:name=".EditEventosActivity"
-            android:exported="false" />
-        <activity android:name=".EditMisionValoresActivity"
             android:exported="false" />
 
 

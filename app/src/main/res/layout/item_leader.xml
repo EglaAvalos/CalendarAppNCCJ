@@ -11,8 +11,7 @@
         android:id="@+id/ivLeaderPhoto"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/user_icon" />
+        android:scaleType="centerCrop" />
 
     <!-- Información del líder (Nombre, puesto y teléfono) -->
     <LinearLayout

@@ -7,7 +7,6 @@
     android:padding="16dp"
     android:background="@drawable/ver2">
 
-    <!-- Título que puede ser opcional -->
     <TextView
         android:id="@+id/tvHelpCenterTitle"
         android:layout_width="match_parent"

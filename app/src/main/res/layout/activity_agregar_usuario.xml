@@ -1,28 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@drawable/ver2"
+    android:gravity="center">
 
+    <!-- Titulo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Usuario"
+        android:textColor="#007AFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Nombre de Usuario -->
     <EditText
         android:id="@+id/etNombreUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de usuario" />
+        android:hint="Nombre de usuario"
+        android:textColor="#007AFF"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Contraseña -->
     <EditText
         android:id="@+id/etContrasenaUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="#007AFF"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Spinner de Admin -->
     <Spinner
         android:id="@+id/spinnerEsAdmin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Botón Guardar Usuario -->
     <Button
         android:id="@+id/btnGuardarUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar Usuario" />
+        android:text="Guardar Usuario"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3FF445"
+        android:background="@drawable/button_rounded"
+        android:padding="12dp"/>
+
 </LinearLayout>

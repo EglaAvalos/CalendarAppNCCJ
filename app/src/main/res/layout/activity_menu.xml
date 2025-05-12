@@ -6,7 +6,6 @@
     android:background="@drawable/ver2"
     android:padding="16dp">
 
-    <!-- Encabezado con imagen de usuario y nombre -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -18,9 +17,9 @@
         <ImageView
             android:id="@+id/img_user"
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/user_icon" />
+            android:src="@drawable/logo_iglesia" />
 
         <TextView
             android:id="@+id/tv_user_name"
@@ -34,7 +33,6 @@
             android:layout_gravity="center_vertical" />
     </LinearLayout>
 
-    <!-- Botones de navegación -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -42,7 +40,6 @@
         android:layout_weight="1"
         android:paddingTop="20dp">
 
-        <!-- Botón Líderes -->
         <Button
             android:id="@+id/btn_leaders"
             android:layout_width="match_parent"
@@ -55,7 +52,6 @@
             android:drawableStart="@drawable/ic_leader"
             android:drawablePadding="8dp" />
 
-        <!-- Botón Misión y Valores -->
         <Button
             android:id="@+id/btn_mission"
             android:layout_width="match_parent"
@@ -68,7 +64,6 @@
             android:drawableStart="@drawable/ic_mv"
             android:drawablePadding="8dp" />
 
-        <!-- Botón Centro de Ayuda -->
         <Button
             android:id="@+id/btn_help"
             android:layout_width="match_parent"
@@ -80,17 +75,18 @@
             android:layout_marginBottom="15dp"
             android:drawableStart="@drawable/ic_help"
             android:drawablePadding="8dp" />
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/log_out"
+            android:textColor="#FFFFFF"
+            android:background="#1A971C"
+            android:layout_marginTop="300dp" />
+
+
 
     </LinearLayout>
 
-    <!-- Botón de Cerrar sesión -->
-    <Button
-        android:id="@+id/btnCerrarSesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/log_out"
-        android:textColor="#FFFFFF"
-        android:background="#3FF445"
-        android:layout_marginTop="20dp" />
 
 </LinearLayout>

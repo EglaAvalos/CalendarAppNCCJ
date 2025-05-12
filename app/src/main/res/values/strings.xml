@@ -8,7 +8,7 @@
     <string name="btn_entrar">Entrar</string>
     <string name="siglas_iglesia">NCCJ</string>
     <string name="calendar_text">Mes y Año</string>
-    <string name="user_name">Icely</string>
+    <string name="user_name">Hola! Selecciona una opción</string>
     <string name="lideres_ncck">Líderes</string>
     <string name="mision_valores">Misión y Valores</string>
     <string name="help_center">Centro de Ayuda</string>
@@ -17,8 +17,21 @@
     <string name="puesto">Puesto</string>
     <string name="telefono">Teléfono</string>
     <string name="btn_savelider">Guardar líder</string>
-    <string name="mision">Nuestra misión es...</string>
-    <string name="valores">Nuestros valores son...</string>
+    <string name="titulo_mision">Mision:</string>
+    <string name="mision">Somos una Iglesia con el fin de
+        anunciar el evangelio, servir a la comunidad y promover la Fe.</string>
+    <string name="titulo_vision">Visión:</string>
+    <string name="Vision"> Evangelizar llevando la palabra de Cristo a quienes no lo conocen,
+        ofreciendo un nuevo comienzo. Servir a la comunidad atendiendo sus
+        necesidades y promoviendo una sociedad más pacífica. Fortalecer la fe
+        respetando las enseñanzas de Jesús y preservando su palabra. Representar
+        sus valores co</string>
+    <string name="agregar_usuarios">Agregar Usuarios</string>
+    <string name="edit_misionValores">Editar Misión y Valores</string>
+    <string name="edit_eventos">Agregar/Editar Eventos</string>
+    <string name="main">Pagina Principal</string>
+    <string name="ingresar_l_deres">Ingresar Líderes</string>
+    <string name="lideres">Líderes</string>
     <array name="admin_options">
         <item>Administrador</item>
         <item>Usuario</item>

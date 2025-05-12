@@ -1,24 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ver2"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvMission"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mision"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_mision"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:textColor="@color/azul"
+            />
+        <TextView
+            android:id="@+id/tvMission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mision"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:justificationMode="inter_word"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_vision"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/azul"
+            />
+        <TextView
+            android:id="@+id/tvValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Vision"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:justificationMode="inter_word"/>
 
-    <TextView
-        android:id="@+id/tvValues"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/valores"
-        android:textSize="16sp" />
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

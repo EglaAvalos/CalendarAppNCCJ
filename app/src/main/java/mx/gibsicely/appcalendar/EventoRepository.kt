@@ -3,6 +3,7 @@ package mx.gibsicely.appcalendar
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+//CRUD eventos
 
 data class Evento(
     val id: Int = 0,
