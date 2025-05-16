@@ -28,7 +28,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context, "AppCalendarDB", nu
 
         val insertAdmin = """
         INSERT INTO users (username, password, is_admin) 
-        VALUES ('myke', 'alitaPollo', 1)
+        VALUES ('myke', '3140', 1)
     """.trimIndent()
         db.execSQL(insertAdmin)
     }

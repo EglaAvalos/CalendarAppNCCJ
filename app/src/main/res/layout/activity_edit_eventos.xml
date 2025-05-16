@@ -1,27 +1,77 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp">
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/ver2">
 
-    <EditText
-        android:id="@+id/etTituloEvento"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título del evento" />
-    <EditText
-        android:id="@+id/etDescripcionEvento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Descripción del evento" />
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_iglesiavii"
+            />
 
-    <EditText
-        android:id="@+id/etFechaEvento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Fecha (ej. 2025-05-12)" />
+        <TextView
+            android:id="@+id/tvTituloEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_eventos"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#007AFF"
+            android:layout_marginBottom="32dp" />
 
-    <Button
-        android:id="@+id/btnGuardarEvento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar evento" />
-</LinearLayout>
+        <EditText
+            android:id="@+id/etTituloEvento"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/even_titulo"
+            android:textColor="@color/black"
+            android:textColorHint="#625858"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etDescripcionEvento"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/event_descripcion"
+            android:textColor="@color/black"
+            android:textColorHint="#625858"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etFechaEvento"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/fecha_event"
+            android:textColor="@color/black"
+            android:textColorHint="#625858"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/btnGuardarEvento"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/save_event"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#007AFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+</ScrollView>

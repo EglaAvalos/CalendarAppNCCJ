@@ -11,17 +11,16 @@ class HelpCenterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_helpcenter) // El layout con el botón
+        setContentView(R.layout.activity_helpcenter)
 
         val btnDownloadManual: Button = findViewById(R.id.btnDownloadManual)
 
-        // Configurar el botón para abrir un enlace de descarga o mostrar un PDF
         btnDownloadManual.setOnClickListener {
             // Aquí puedes poner la URL de donde se encuentra el PDF
             val pdfUrl = "https://www.ejemplo.com/manual_de_usuario.pdf"
 
             try {
-                // Intent para abrir el enlace del PDF
+
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(pdfUrl))
                 startActivity(intent)
             } catch (e: Exception) {

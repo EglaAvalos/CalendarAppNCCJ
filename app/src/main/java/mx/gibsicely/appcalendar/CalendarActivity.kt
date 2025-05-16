@@ -11,6 +11,9 @@ import android.widget.TextView
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
+import android.widget.PopupMenu
+import android.widget.Toast
+
 
 class CalendarActivity : AppCompatActivity() {
 
@@ -30,6 +33,7 @@ class CalendarActivity : AppCompatActivity() {
 
         eventoRepo = EventoRepository(applicationContext)
         eventos = eventoRepo.obtenerEventos() ?: emptyList()
+
 
         daysOfWeekGrid = findViewById(R.id.days_of_week)
         calendarGrid = findViewById(R.id.calendar_grid)
@@ -108,11 +112,30 @@ class CalendarActivity : AppCompatActivity() {
                 val dayString = String.format("%04d-%02d-%02d", calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, dayOfMonth)
 
                 val eventosDelDia = eventos.filter { it.fecha == dayString }
+
                 if (eventosDelDia.isNotEmpty()) {
                     dayButton.setBackgroundColor(Color.parseColor("#90EE90"))
                 }
 
                 dayButton.text = dayOfMonth.toString()
+
+                // 👉 Aquí agregamos el listener
+                dayButton.setOnClickListener { view ->
+                    if (eventosDelDia.isNotEmpty()) {
+                        val popupMenu = PopupMenu(this, view)
+                        eventosDelDia.forEachIndexed { index, evento ->
+                            popupMenu.menu.add(0, index, 0, evento.titulo)
+                        }
+                        popupMenu.setOnMenuItemClickListener { item ->
+                            Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
+                            true
+                        }
+                        popupMenu.show()
+                    } else {
+                        Toast.makeText(this, "Sin eventos", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
             } else {
                 dayButton.text = ""
                 dayButton.isEnabled = false
@@ -128,6 +151,7 @@ class CalendarActivity : AppCompatActivity() {
             }
             calendarGrid.addView(dayButton, params)
         }
+
     }
 
     private fun getMonthName(month: Int): String {

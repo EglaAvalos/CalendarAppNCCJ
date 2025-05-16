@@ -11,9 +11,10 @@
         android:id="@+id/tvHelpCenterTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Descargar Manual de Usuario"
+        android:text="@string/manual_usuario"
         android:textSize="22sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginBottom="32dp"
         android:gravity="center"/>
 
@@ -22,7 +23,9 @@
         android:id="@+id/btnDownloadManual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descargar PDF"
+        android:backgroundTint="#007AFF"
+        android:text="@string/pdf"
+        android:textColor="@color/white"
         android:layout_gravity="center"/>
 
 </LinearLayout>

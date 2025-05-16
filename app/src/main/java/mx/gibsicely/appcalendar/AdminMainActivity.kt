@@ -12,15 +12,10 @@ class AdminMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_admin_main)
 
         val btnMain = findViewById<Button>(R.id.btnMain)
-        val btnEventos = findViewById<Button>(R.id.btnEventos)
         val btnAgregarUsuario = findViewById<Button>(R.id.btnAgregarUsuario)
 
         btnMain.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
-            startActivity(intent)
-        }
-        btnEventos.setOnClickListener {
-            val intent = Intent(this, EditEventosActivity::class.java)
             startActivity(intent)
         }
 

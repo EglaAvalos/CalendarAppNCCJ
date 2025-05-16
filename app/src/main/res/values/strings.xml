@@ -28,10 +28,18 @@
         sus valores co</string>
     <string name="agregar_usuarios">Agregar Usuarios</string>
     <string name="edit_misionValores">Editar Misión y Valores</string>
-    <string name="edit_eventos">Agregar/Editar Eventos</string>
+    <string name="edit_eventos">Agregar Eventos</string>
     <string name="main">Pagina Principal</string>
     <string name="ingresar_l_deres">Ingresar Líderes</string>
     <string name="lideres">Líderes</string>
+    <string name="even_titulo">Título del evento</string>
+    <string name="event_descripcion">Descripción del evento</string>
+    <string name="fecha_event">Fecha (ej. 2025-05-12)</string>
+    <string name="save_event">Guardar evento</string>
+    <string name="manual_usuario">Descargar Manual de Usuario</string>
+    <string name="pdf">Descargar PDF</string>
+    <string name="event_day">Selecciona un día con evento</string>
+    <string name="agregar_evento">Agregar Evento</string>
     <array name="admin_options">
         <item>Administrador</item>
         <item>Usuario</item>

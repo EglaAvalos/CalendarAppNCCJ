@@ -29,7 +29,7 @@
             android:text="Nombre del líder"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#3FF445"/>
+            android:textColor="@color/azul_oscuro"/>
 
         <!-- Puesto del líder -->
         <TextView

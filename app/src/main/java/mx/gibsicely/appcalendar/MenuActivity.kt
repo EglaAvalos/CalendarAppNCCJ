@@ -16,6 +16,7 @@ class MenuActivity : AppCompatActivity() {
         val btnLeaders = findViewById<Button>(R.id.btn_leaders)
         val btnMission = findViewById<Button>(R.id.btn_mission)
         val btnHelp = findViewById<Button>(R.id.btn_help)
+        val btnEventos = findViewById<Button>(R.id.btn_evento)
         val btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
 
         // Evento para el botón de Líderes
@@ -29,17 +30,23 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, MisionValorActivity::class.java))
         }
 
-        // Evento para el botón de Centro de Ayuda
+        // Evento para el botón de Centro de Ayuda gibs
         btnHelp.setOnClickListener {
             startActivity(Intent(this, HelpCenterActivity::class.java))
         }
 
-        // Evento para el botón de Cerrar Sesión
+        // Evento para el botón de Cerrar Sesión icy
         btnCerrarSesion.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
+        }
+
+        // Evento para añadir un evento xdd
+        btnEventos.setOnClickListener {
+            val intent = Intent(this, EditEventosActivity::class.java)
+            startActivity(intent)
         }
     }
 }
